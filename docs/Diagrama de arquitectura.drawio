@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="B9hQMSvQq71dqrg2W3Vg">
+    <mxGraphModel dx="964" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-17" parent="1" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" value="CLOUD" vertex="1">
+          <mxGeometry height="280" width="523" x="152" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-6" edge="1" parent="1" source="0PpxGrg8C2TeW0qnOD91-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0PpxGrg8C2TeW0qnOD91-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-8" connectable="0" parent="0PpxGrg8C2TeW0qnOD91-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="HTTPS" vertex="1">
+          <mxGeometry relative="1" x="-0.3397" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-1" parent="1" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.browser;" value="" vertex="1">
+          <mxGeometry height="72.5" width="47.5" x="327" y="17.5" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Cliente/Navegador" vertex="1">
+          <mxGeometry height="30" width="60" x="400" y="38.75" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="72.5" width="69.75" x="317" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-10" edge="1" parent="1" source="0PpxGrg8C2TeW0qnOD91-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0PpxGrg8C2TeW0qnOD91-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-12" connectable="0" parent="0PpxGrg8C2TeW0qnOD91-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="RestApi/JSON" vertex="1">
+          <mxGeometry relative="1" x="0.2625" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-5" parent="1" style="shape=mxgraph.sap.icon;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeWidth=1;strokeColor=#D5DADD;fillColor=#EDEFF0;gradientColor=#FCFCFC;gradientDirection=west;aspect=fixed;SAPIcon=Application_Frontend_Service" value="" vertex="1">
+          <mxGeometry height="50" width="50" x="325.75" y="181.25" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Frontend" vertex="1">
+          <mxGeometry height="30" width="60" x="390" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-14" edge="1" parent="1" source="0PpxGrg8C2TeW0qnOD91-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0PpxGrg8C2TeW0qnOD91-13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-16" connectable="0" parent="0PpxGrg8C2TeW0qnOD91-14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="ORM/SQL" vertex="1">
+          <mxGeometry relative="1" x="-0.2691" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-9" parent="1" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/assets/kubernetes/1/api.svg" value="" vertex="1">
+          <mxGeometry height="80" width="80" x="311" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Backend" vertex="1">
+          <mxGeometry height="30" width="60" x="251" y="328" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-13" parent="1" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cddc_cloud_database_dedicated_cluster;" value="" vertex="1">
+          <mxGeometry height="63.11" width="69.75" x="470" y="309.44" as="geometry" />
+        </mxCell>
+        <mxCell id="0PpxGrg8C2TeW0qnOD91-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Base de Datos" vertex="1">
+          <mxGeometry height="30" width="80" x="530" y="328" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
