@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import catalogoRoutes from "./routes/catalogo.routes.js";
+import confirmacionRoutes from "./routes/confirmacion.routes.js";
 import { errorHandler } from "./middlewares/error.middleware.js";
 
 
@@ -24,6 +25,7 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use("/api", catalogoRoutes);
+app.use("/api", confirmacionRoutes);
 
 app.use(errorHandler);
 
