@@ -1,5 +1,8 @@
 import express from "express";
 import cors from "cors";
+import catalogoRoutes from "./routes/catalogo.routes.js";
+import { errorHandler } from "./middlewares/error.middleware.js";
+
 
 const app = express();
 
@@ -19,5 +22,9 @@ app.get("/api/health", (req, res) => {
         message: "Server is running",
     });
 });
+
+app.use("/api", catalogoRoutes);
+
+app.use(errorHandler);
 
 export default app;
