@@ -15,5 +15,19 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eventos_backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://eventos_user:eventos_password@postgres:5432/plataforma_eventos
+      FRONTEND_URL: http://localhost:5173
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
 volumes:
   postgres_data:
