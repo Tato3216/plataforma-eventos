@@ -34,9 +34,11 @@ class ConfirmacionRepository {
     async createConfirmacion(
         customer: {
             name: string;
+            lastName: string;
             email: string;
         },
         attends:boolean,
+        attendanceAt: Date | null,
         serviceIds: number[],
         productIds: number[],
     ) {
@@ -47,9 +49,11 @@ class ConfirmacionRepository {
                 },
                 update: {
                     name: customer.name,
+                    lastName: customer.lastName,
                 },
                 create: {
                     name: customer.name,
+                    lastName: customer.lastName,
                     email: customer.email,
                 },
             });
@@ -58,6 +62,7 @@ class ConfirmacionRepository {
                 data: {
                     customerId: savedCustomer.id,
                     attends,
+                    attendanceAt,
 
                     services: {
                         create: serviceIds.map((serviceId) => ({
