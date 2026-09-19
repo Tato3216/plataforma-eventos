@@ -136,9 +136,12 @@ function EventPage() {
     }
 
     return (
-        <main>
-            <h1>Feria de Promociones</h1>
-
+        <main className="event-page">
+            <header className="top-header">
+                <strong>Evento de Promociones</strong>
+                <span>Feria de Promociones - 2026</span>
+            </header>
+            <div className="event-content">
             <CustomerForm
             name={name}
             lastName={lastName}
@@ -153,55 +156,68 @@ function EventPage() {
             />
 
             {attends && (
-            <>
-            <section>
-            <h2>Servicios</h2>
+                <section className="interests-column">
 
-            {services.map((service) => (
-                <InterestItem
-                    key={service.id}
-                    id={service.id}
-                    name={service.name}
-                    price={service.price}
-                    selected={selectedServiceIds.includes(service.id)}
-                    onToggle={toggleService}
-                />
-            ))}
-            </section>
+                    <h2 className="step-title">
+                        <span>2</span>
+                        Seleccione Servicios y Productos de su interés
+                    </h2>
 
-            <section>
-            <h2>Productos</h2>
+                    <div className="interests-card">
 
-            {products.map((product) => (
-                <InterestItem
-                    key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    price={product.price}
-                    selected={selectedProductIds.includes(product.id)}
-                    onToggle={toggleProduct}
-                />
-            ))}
-            </section>
-            </>
+                        <div className="catalog-title">
+                            Servicios seleccionados
+                        </div>
+
+                        {services.map((service) => (
+                            <InterestItem
+                                key={service.id}
+                                id={service.id}
+                                name={service.name}
+                                price={service.price}
+                                selected={selectedServiceIds.includes(service.id)}
+                                onToggle={toggleService}
+                            />
+                        ))}
+
+                        <div className="catalog-title">
+                            Productos seleccionados
+                        </div>
+
+                        {products.map((product) => (
+                            <InterestItem
+                                key={product.id}
+                                id={product.id}
+                                name={product.name}
+                                price={product.price}
+                                selected={selectedProductIds.includes(product.id)}
+                                onToggle={toggleProduct}
+                            />
+                        ))}
+
+                    </div>
+
+                </section>
             )}
-
+            </div>
             <button
+            className="confirm-button"
             type="button"
             onClick={handleSubmit}
             disabled={submitting}
             >
                 {submitting ? "Confirmando..." : "Confirmar Asistencia"}
             </button>
+            
 
             {submitError && (
-                <p>
+                <p className="error-message">
                     {submitError}
                 </p>
             )}
 
             {confirmation && (
-                <section>
+                <section className="confirmation-summary">
                     <hr />
                     <h2>Confirmacion registrada</h2>
 
@@ -223,7 +239,7 @@ function EventPage() {
                             Fecha y hora: {" "}
                             {new Date(
                                 confirmation.attendanceAt
-                            ).toLocaleDateString()}
+                            ).toLocaleString()}
                         </p>
                     )}
 
@@ -276,6 +292,9 @@ function EventPage() {
 
                 </section>
             )}
+        <footer className="footer">
+            Feria anual de promociones
+        </footer>
         </main>
     );
 }

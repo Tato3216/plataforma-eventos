@@ -14,15 +14,20 @@ function InterestItem({
     onToggle,
 }: InterestItemProps) {
     return (
-        <label>
+        <label className={`interest-item ${selected ? "selected" : ""}`}>
             <input
-            type="checkbox"
-            checked={selected}
-            onChange={() => onToggle(id)}
+                type="checkbox"
+                checked={selected}
+                onChange={() => onToggle(id)}
             />
-            <span>
-                {name} - Q{price}
+
+            <span className="interest-name">
+                {name}
             </span>
+
+            <strong className="interest-price">
+                Q{Number(price).toFixed(2)}
+            </strong>
         </label>
     );
 }
