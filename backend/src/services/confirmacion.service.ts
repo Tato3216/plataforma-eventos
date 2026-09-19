@@ -7,10 +7,25 @@ import {DescuentoService} from "../domain/descuento.service.js";
 
 class ConfirmacionService{
     async create(data: CreateConfirmacionDto){
-        if(!data.attends){
-            if(data.serviceIds.length > 0 || data.productIds.length > 0){
+        if (data.attends && !data.attendanceAt) {
+            throw new AppError(
+                400,
+                "Asistencia y fecha son requeridos cuando el cliente está asistiendo"
+            );
+        }
+
+        if (!data.attends) {
+            if (data.attendanceAt) {
                 throw new AppError(
-                    400, "Un cliente que no asiste no puede tener servicios o productos"
+                    400,
+                    "Un cliente que no asiste no puede seleccionar una fecha de asistencia"
+                );
+            }
+
+            if (data.serviceIds.length > 0 || data.productIds.length > 0) {
+                throw new AppError(
+                    400,
+                    "Un cliente que no asiste no puede seleccionar servicios o productos"
                 );
             }
         }
@@ -71,6 +86,7 @@ class ConfirmacionService{
             await confirmacionRepository.createConfirmacion(
                 data.customer,
                 data.attends,
+                data.attendanceAt ?? null,
                 data.serviceIds,
                 data.productIds
             );
@@ -81,6 +97,8 @@ class ConfirmacionService{
             customer: confirmation.customer,
 
             attends: confirmation.attends,
+
+            attendanceAt: confirmation.attendanceAt,
 
             services: confirmation.services.map(
                 (item) => item.service

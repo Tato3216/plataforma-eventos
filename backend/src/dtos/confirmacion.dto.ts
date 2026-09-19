@@ -12,6 +12,12 @@ export const createConfirmacionSchema = z.object({
         .min(2, "Nombre del cliente debe contener al menos 2 caracteres")
         .max(100, "Nombre del cliente no puede exceder 100 caracteres"),
 
+        lastName: z
+            .string()
+            .trim()
+            .min(2, "Apellido del cliente debe contener al menos 2 caracteres")
+            .max(100, "Apellido del cliente no puede exceder 100 caracteres"),
+
         email: z
         .string()
         .trim()
@@ -19,6 +25,8 @@ export const createConfirmacionSchema = z.object({
     }),
 
     attends: z.boolean(),
+
+    attendanceAt: z.coerce.date().nullable().optional(),
 
     serviceIds: z
     .array(z.number().int().positive())
