@@ -4,6 +4,14 @@ Aplicación web desarrollada para gestionar la confirmación de asistencia de cl
 
 La plataforma permite registrar los datos del cliente, confirmar su asistencia, seleccionar servicios y productos de interés y calcular los descuentos correspondientes según las reglas establecidas.
 
+## Aplicación desplegada
+
+La aplicación se encuentra desplegada en Railway utilizando servicios independientes para frontend, backend y PostgreSQL.
+
+- Frontend: https://frontendweb-production-a6ab.up.railway.app/
+- API: https://api-production-9a61.up.railway.app/
+- Health check: https://api-production-9a61.up.railway.app/api/health
+
 ## Tecnologías utilizadas
 
 ### Frontend
