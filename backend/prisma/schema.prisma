@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Customer {
+  id        Int      @id @default(autoincrement())
+  name      String
+  lastName  String
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  confirmations Confirmation[]
+}
+
+model Service {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  description String?
+  price       Decimal  @db.Decimal(10, 2)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  confirmations ConfirmationService[]
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  description String?
+  price       Decimal  @db.Decimal(10, 2)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  confirmations ConfirmationProduct[]
+}
+
+model Confirmation {
+  id           Int       @id @default(autoincrement())
+  customerId   Int
+  attends      Boolean   @default(true)
+  attendanceAt DateTime?
+  createdAt    DateTime  @default(now())
+
+  customer Customer @relation(fields: [customerId], references: [id])
+
+  services ConfirmationService[]
+  products ConfirmationProduct[]
+}
+
+model ConfirmationService {
+  confirmationId Int
+  serviceId      Int
+
+  confirmation Confirmation @relation(fields: [confirmationId], references: [id], onDelete: Cascade)
+  service      Service      @relation(fields: [serviceId], references: [id])
+
+  @@id([confirmationId, serviceId])
+}
+
+model ConfirmationProduct {
+  confirmationId Int
+  productId      Int
+
+  confirmation Confirmation @relation(fields: [confirmationId], references: [id], onDelete: Cascade)
+  product      Product      @relation(fields: [productId], references: [id])
+
+  @@id([confirmationId, productId])
+}

@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: eventos_postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: eventos_user
+      POSTGRES_PASSWORD: eventos_password
+      POSTGRES_DB: plataforma_eventos
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eventos_backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://eventos_user:eventos_password@postgres:5432/plataforma_eventos
+      FRONTEND_URL: http://localhost:5173
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
