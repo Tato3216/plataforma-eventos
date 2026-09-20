@@ -117,19 +117,19 @@ GET /api/health
 ### Servicios
 
 ```http
-GET /api/services
+GET /api/servicios
 ```
 
 ### Productos
 
 ```http
-GET /api/products
+GET /api/productos
 ```
 
 ### Confirmación
 
 ```http
-POST /api/confirmations
+POST /api/confirmaciones
 ```
 
 Ejemplo:
